@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коммерческое предложение — Медицинский портал</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(5, 150, 105, 0.15); }
+        .slide { min-height: 100vh; scroll-snap-align: start; }
+        main { scroll-snap-type: y mandatory; }
+        .icon-box { background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-medical-500 flex items-center justify-center">
+                    <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="font-semibold text-gray-800">Medical Portal</span>
+            </div>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="#hero" class="nav-dot w-2 h-2 rounded-full bg-medical-500"></a>
+                <a href="#why-us" class="nav-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-medical-300 transition-colors"></a>
+                <a href="#stages" class="nav-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-medical-300 transition-colors"></a>
+                <a href="#details" class="nav-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-medical-300 transition-colors"></a>
+                <a href="#pricing" class="nav-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-medical-300 transition-colors"></a>
+                <a href="#cta" class="nav-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-medical-300 transition-colors"></a>
+            </div>
+            <button onclick="window.print()" class="text-sm text-gray-500 hover:text-medical-600 transition-colors flex items-center gap-1.5">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span class="hidden sm:inline">Скачать PDF</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="slide flex items-center justify-center pt-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-medical-50 rounded-full text-medical-700 text-sm font-medium mb-8">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    Коммерческое предложение
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    Разработка<br>
+                    <span class="gradient-text">медицинского портала</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-12">
+                    Полный цикл создания современной платформы для медицинской сети с интеграцией лаборатории и личным кабинетом пациента
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-3 mb-16">
+                    <span class="px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-sm text-gray-600">WP/Laravel</span>
+                    <span class="px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-sm text-gray-600">20+ городов</span>
+                    <span class="px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-sm text-gray-600">API интеграция</span>
+                    <span class="px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-sm text-gray-600">ФЗ-152</span>
+                </div>
+
+                <a href="#why-us" class="inline-flex items-center gap-2 text-medical-600 hover:text-medical-700 font-medium transition-colors">
+                    Почему мы?
+                    <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="slide py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Почему мы?</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Знаем локальную специфику стран СНГ и делаем <span class="underline decoration-2 decoration-medical-500">реальные</span> результаты в <span class="text-medical-500 font-medium">медицинской</span> нише</p>
+                </div>
+
+                <!-- Cases heading -->
+                <h3 class="text-xl font-semibold text-gray-800 text-center mb-8">Кейсы за которые не стыдно</h3>
+
+                <!-- Portfolio by category -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- SEO Projects -->
+                    <div class="card-hover bg-gradient-to-br from-medical-50 to-white rounded-2xl p-8 border border-medical-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                <i data-lucide="search" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">SEO</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://artriamed.ru/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 hover:border-medical-300 hover:shadow-md transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="globe" class="w-5 h-5 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                                    <span class="font-medium text-gray-700 group-hover:text-medical-600 transition-colors">artriamed.ru</span>
+                                </div>
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">РФ</span>
+                            </a>
+                            <a href="https://expertneuro.kz/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 hover:border-medical-300 hover:shadow-md transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="globe" class="w-5 h-5 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                                    <span class="font-medium text-gray-700 group-hover:text-medical-600 transition-colors">expertneuro.kz</span>
+                                </div>
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">КЗ</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Development Projects -->
+                    <div class="card-hover bg-gradient-to-br from-medical-50 to-white rounded-2xl p-8 border border-medical-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                <i data-lucide="code-2" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Разработка</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://algimed.com/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 hover:border-medical-300 hover:shadow-md transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="globe" class="w-5 h-5 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                                    <span class="font-medium text-gray-700 group-hover:text-medical-600 transition-colors">algimed.com</span>
+                                </div>
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">ЕС</span>
+                            </a>
+                            <a href="https://babyboss.by/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 hover:border-medical-300 hover:shadow-md transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="globe" class="w-5 h-5 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                                    <span class="font-medium text-gray-700 group-hover:text-medical-600 transition-colors">babyboss.by</span>
+                                </div>
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">РБ</span>
+                            </a>
+                            <a href="https://pharma.by/" target="_blank" rel="noopener" class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 hover:border-medical-300 hover:shadow-md transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="globe" class="w-5 h-5 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                                    <span class="font-medium text-gray-700 group-hover:text-medical-600 transition-colors">pharma.by</span>
+                                </div>
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">РБ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geography summary -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
+                        <span class="w-7 h-7 rounded-full bg-medical-500 flex items-center justify-center text-xs font-bold text-white">РФ</span>
+                        <span class="text-sm font-medium text-gray-700">Россия</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
+                        <span class="w-7 h-7 rounded-full bg-medical-500 flex items-center justify-center text-xs font-bold text-white">РБ</span>
+                        <span class="text-sm font-medium text-gray-700">Беларусь</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
+                        <span class="w-7 h-7 rounded-full bg-medical-500 flex items-center justify-center text-xs font-bold text-white">КЗ</span>
+                        <span class="text-sm font-medium text-gray-700">Казахстан</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
+                        <span class="w-7 h-7 rounded-full bg-medical-500 flex items-center justify-center text-xs font-bold text-white">ЕС</span>
+                        <span class="text-sm font-medium text-gray-700">Европа</span>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#stages" class="inline-flex items-center gap-2 text-medical-600 hover:text-medical-700 font-medium transition-colors">
+                        Смотреть этапы работ
+                        <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="stages" class="slide py-24 px-6 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Дорожная карта</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto">8 фаз · 11 этапов · 18 недель</p>
+                </div>
+
+                <!-- Horizontal Roadmap -->
+                <div class="relative">
+                    <!-- Progress bar background -->
+                    <div class="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gray-200 rounded-full"></div>
+                    <!-- Progress bar fill -->
+                    <div class="hidden lg:block absolute top-16 left-0 h-1 bg-gradient-to-r from-medical-400 via-medical-500 to-medical-600 rounded-full" style="width: 100%;"></div>
+
+                    <!-- Roadmap items -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-2">
+                        <!-- Phase 1 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="pen-tool" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 1-2</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Проектирование</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">UX, БД, структура</p>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="palette" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 3-4</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Дизайн</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">6 страниц, UI-kit</p>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="code-2" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 5-8</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Разработка</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">WP/Laravel, верстка</p>
+                        </div>
+
+                        <!-- Phase 4 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="user-circle" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 9-10</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Личный кабинет</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">Профиль, история</p>
+                        </div>
+
+                        <!-- Phase 5 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="plug" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 11-12</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Интеграции</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">API, корзина, гео</p>
+                        </div>
+
+                        <!-- Phase 6 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 13-14</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Мед. специфика</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">ФЗ-152, a11y</p>
+                        </div>
+
+                        <!-- Phase 7 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-medical-200 group-hover:border-medical-400 shadow-sm flex items-center justify-center mb-3 transition-all group-hover:shadow-md">
+                                <i data-lucide="database" class="w-6 h-6 text-medical-600"></i>
+                            </div>
+                            <div class="hidden lg:block w-4 h-4 rounded-full bg-medical-500 border-4 border-white shadow mb-3"></div>
+                            <span class="text-xs font-bold text-medical-600 mb-1">Нед 15-16</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">Контент + SEO</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">Парсинг, URL</p>
+                        </div>
+
+                        <!-- Phase 8 - Final -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-medical-500 to-medical-600 shadow-lg flex items-center justify-center mb-3 ring-4 ring-medical-100">
+                                <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="hidden lg:block w-5 h-5 rounded-full bg-medical-600 border-4 border-white shadow ring-4 ring-medical-200 mb-3"></div>
+                            <span class="text-xs font-bold text-white bg-medical-500 px-2 py-0.5 rounded-full mb-1">Нед 17-18</span>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-1">QA + Запуск</h4>
+                            <p class="text-xs text-gray-500 hidden sm:block">Тест, релиз</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gantt-style breakdown -->
+                <div class="mt-16 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 overflow-x-auto">
+                    <div class="min-w-[600px]">
+                        <!-- Header -->
+                        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+                            <div class="w-32 text-xs font-semibold text-gray-500">ФАЗА</div>
+                            <div class="flex-1 grid grid-cols-9 gap-1">
+                                <div class="text-center text-xs text-gray-400">1-2</div>
+                                <div class="text-center text-xs text-gray-400">3-4</div>
+                                <div class="text-center text-xs text-gray-400">5-6</div>
+                                <div class="text-center text-xs text-gray-400">7-8</div>
+                                <div class="text-center text-xs text-gray-400">9-10</div>
+                                <div class="text-center text-xs text-gray-400">11-12</div>
+                                <div class="text-center text-xs text-gray-400">13-14</div>
+                                <div class="text-center text-xs text-gray-400">15-16</div>
+                                <div class="text-center text-xs text-gray-400">17-18</div>
+                            </div>
+                        </div>
+                        <!-- Rows -->
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Проектирование</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Дизайн</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Разработка</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Личный кабинет</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Интеграции</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Мед. специфика</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-700">Контент + SEO</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-500"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-32 text-xs font-medium text-gray-900">QA + Запуск</div>
+                                <div class="flex-1 grid grid-cols-9 gap-1">
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-gray-100"></div>
+                                    <div class="h-6 rounded-md bg-medical-600"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="mt-12 flex flex-wrap justify-center gap-6">
+                    <div class="bg-white rounded-2xl px-8 py-5 border border-gray-100 shadow-sm text-center">
+                        <div class="text-3xl font-bold text-medical-600 mb-1">18</div>
+                        <div class="text-sm text-gray-500">недель</div>
+                    </div>
+                    <div class="bg-white rounded-2xl px-8 py-5 border border-gray-100 shadow-sm text-center">
+                        <div class="text-3xl font-bold text-medical-600 mb-1">11</div>
+                        <div class="text-sm text-gray-500">этапов</div>
+                    </div>
+                    <div class="bg-white rounded-2xl px-8 py-5 border border-gray-100 shadow-sm text-center">
+                        <div class="text-3xl font-bold text-medical-600 mb-1">~4.5<span class="text-lg align-top">*</span></div>
+                        <div class="text-sm text-gray-500">месяца</div>
+                    </div>
+                </div>
+
+                <!-- Footnote -->
+                <p class="text-center text-xs text-gray-400 mt-4">* Ориентировочное среднее время. Сроки могут увеличиться при длительном согласовании этапов работ.</p>
+
+                <div class="text-center mt-12">
+                    <a href="#details" class="inline-flex items-center gap-2 text-medical-600 hover:text-medical-700 font-medium transition-colors">
+                        Детализация работ
+                        <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section id="details" class="slide py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Детализация работ</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto">8 фаз проекта с подробным описанием</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Фаза 01 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="pen-tool" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 01</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Проектирование</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 1-2</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Закладываем фундамент проекта: анализируем бизнес-процессы, проектируем архитектуру и создаём прототипы.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                UX-прототипы в Figma с user flow
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Карта сайта и техническое задание
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Архитектура базы данных
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 02 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="palette" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 02</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Дизайн</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 3-4</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Создаём уникальный визуальный стиль, соответствующий медицинской тематике и современным трендам.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Дизайн 6 типов страниц
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                UI-kit с переиспользуемыми компонентами
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Адаптивные макеты для всех устройств
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 03 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="code-2" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 03</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Разработка</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 5-8</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Превращаем дизайн в работающий продукт: backend, frontend и настройка CMS для удобного управления.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                WP/Laravel backend разработка
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Адаптивная вёрстка без конструкторов
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Настройка CMS для контент-менеджеров
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 04 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="user-circle" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 04</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Личный кабинет</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 9-10</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Разрабатываем функционал для пациентов: от регистрации до просмотра результатов исследований.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Регистрация и авторизация
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Профиль пациента и избранные врачи
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                История заказов и результатов
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 05 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="plug" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 05</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Интеграции</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 11-12</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Связываем сайт с внешними системами: лаборатория, геолокация, генерация документов.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                API/SQL интеграция с БД лаборатории
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Корзина + генерация PDF-бланков
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Геопозиция: 20+ городов по IP
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 06 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 06</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Мед. специфика</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 13-14</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Обеспечиваем соответствие всем требованиям законодательства и доступность для всех пользователей.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                ФЗ-152 и требования Минздрава
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Версия для слабовидящих (WCAG 2.1)
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Политика обработки перс. данных
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 07 -->
+                    <div class="card-hover bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center">
+                                    <i data-lucide="database" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-medical-600 bg-medical-50 px-2 py-0.5 rounded-full">Фаза 07</span>
+                                    <h3 class="text-lg font-semibold text-gray-900">Контент + SEO</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">Нед 15-16</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Переносим контент и сохраняем SEO-позиции: парсинг, импорт и настройка редиректов.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Парсинг и импорт контента
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                SEO-переезд с 301-редиректами
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-medical-500"></i>
+                                Сохранение поисковых позиций
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Фаза 08 -->
+                    <div class="card-hover bg-gradient-to-br from-medical-500 to-medical-600 rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                                    <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium text-white bg-white/20 px-2 py-0.5 rounded-full">Фаза 08</span>
+                                    <h3 class="text-lg font-semibold text-white">QA + Запуск</h3>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-medical-200">Нед 17-18</span>
+                        </div>
+                        <p class="text-sm text-medical-100 mb-4">Финальная проверка качества, устранение багов, аудит безопасности и запуск в продакшн.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-medical-100">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                                Функциональное тестирование
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-medical-100">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                                Аудит безопасности
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-medical-100">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                                Деплой и запуск в продакшн
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#pricing" class="inline-flex items-center gap-2 text-medical-600 hover:text-medical-700 font-medium transition-colors">
+                        Смета проекта
+                        <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="slide py-24 px-6 bg-gray-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Смета проекта</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Честная стоимость работ по этапам, без навязывания лишних услуг</p>
+                </div>
+
+                <!-- Pricing table -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="divide-y divide-gray-100">
+                        <!-- Row 1 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="pen-tool" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Проектирование</div>
+                                    <div class="text-sm text-gray-500">UX, БД, структура</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">300 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 1-2</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="palette" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Дизайн</div>
+                                    <div class="text-sm text-gray-500">6 типов страниц, UI-kit</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">400 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 3-4</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="code-2" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Разработка</div>
+                                    <div class="text-sm text-gray-500">WP/Laravel, адаптивная вёрстка</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">800 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 5-8</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="user-circle" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Личный кабинет</div>
+                                    <div class="text-sm text-gray-500">Профиль, избранное, история</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">450 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 9-10</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 5 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="plug" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Интеграции</div>
+                                    <div class="text-sm text-gray-500">API, корзина, PDF, геопозиция</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">550 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 11-12</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 6 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Мед. специфика</div>
+                                    <div class="text-sm text-gray-500">ФЗ-152, Минздрав, accessibility</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">350 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 13-14</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 7 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="database" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Контент + SEO</div>
+                                    <div class="text-sm text-gray-500">Парсинг, импорт, редиректы</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">300 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 15-16</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 8 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="rocket" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">QA + Запуск</div>
+                                    <div class="text-sm text-gray-500">Тестирование, аудит, релиз</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">250 000 ₽</div>
+                                <div class="text-xs text-gray-400">Нед 17-18</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 9 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Документация</div>
+                                    <div class="text-sm text-gray-500">Техническая документация проекта</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">150 000 ₽</div>
+                                <div class="text-xs text-gray-400">—</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 10 -->
+                        <div class="flex items-center justify-between p-5 hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-medical-100 flex items-center justify-center">
+                                    <i data-lucide="headphones" class="w-5 h-5 text-medical-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">Поддержка</div>
+                                    <div class="text-sm text-gray-500">Техническая поддержка 3 месяца</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold text-gray-900">250 000 ₽</div>
+                                <div class="text-xs text-gray-400">3 мес</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="bg-gradient-to-r from-medical-500 to-medical-600 p-6">
+                        <div class="flex items-center justify-between">
+                            <div class="text-white">
+                                <div class="text-lg font-semibold">Итого</div>
+                                <div class="text-medical-100 text-sm">10 позиций · 18 недель + поддержка</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-3xl font-bold text-white">3 800 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#cta" class="inline-flex items-center gap-2 text-medical-600 hover:text-medical-700 font-medium transition-colors">
+                        Обсудить проект
+                        <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="slide py-24 px-6 bg-gradient-to-br from-medical-800 to-medical-900">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-medical-200 text-sm font-medium mb-8">
+                    <i data-lucide="rocket" class="w-4 h-4"></i>
+                    Следующий шаг
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Готовы обсудить проект?
+                </h2>
+
+                <p class="text-lg text-medical-200 max-w-xl mx-auto mb-12">
+                    Назначим встречу для детального обсуждения сроков, бюджета и технических вопросов
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <div class="bg-white/10 backdrop-blur rounded-2xl px-8 py-6 text-center">
+                        <div class="text-4xl font-bold text-white mb-1">11</div>
+                        <div class="text-sm text-medical-200">этапов</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-2xl px-8 py-6 text-center">
+                        <div class="text-4xl font-bold text-white mb-1">20+</div>
+                        <div class="text-sm text-medical-200">городов</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-2xl px-8 py-6 text-center">
+                        <div class="text-4xl font-bold text-white mb-1">1</div>
+                        <div class="text-sm text-medical-200">платформа</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="mailto:romanrezko@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-medical-800 font-semibold rounded-xl hover:bg-medical-50 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        romanrezko@gmail.com
+                    </a>
+                    <a href="https://t.me/romanrezko" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/20">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Telegram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-gray-900 text-center">
+        <p class="text-sm text-gray-500">
+            Коммерческое предложение · 2026 · Entropium
+        </p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update active nav dot on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navDots.forEach(dot => {
+                        dot.classList.remove('bg-medical-500');
+                        dot.classList.add('bg-gray-300');
+                    });
+                    const activeLink = document.querySelector(`.nav-dot[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('bg-gray-300');
+                        activeLink.classList.add('bg-medical-500');
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const sectionIds = ['hero', 'why-us', 'stages', 'details', 'pricing', 'cta'];
+            const currentSection = Array.from(sections).find(s => {
+                const rect = s.getBoundingClientRect();
+                return rect.top >= -100 && rect.top <= 200;
+            });
+            const currentIndex = currentSection ? sectionIds.indexOf(currentSection.id) : 0;
+
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                const nextIndex = Math.min(currentIndex + 1, sectionIds.length - 1);
+                document.getElementById(sectionIds[nextIndex])?.scrollIntoView({ behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                const prevIndex = Math.max(currentIndex - 1, 0);
+                document.getElementById(sectionIds[prevIndex])?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>

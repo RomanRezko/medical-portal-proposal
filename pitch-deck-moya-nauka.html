@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КП — Разработка платформы «Моя Наука»</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface-2: #1a1a24;
+            --border: rgba(255,255,255,0.08);
+            --text: #ffffff;
+            --text-2: #8b8b9e;
+            --accent: #6366f1;
+            --accent-2: #818cf8;
+            --glass: rgba(255,255,255,0.03);
+        }
+
+        html { scroll-behavior: smooth; font-size: 14px; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 100;
+        }
+        .logo { font-weight: 600; font-size: 13px; color: var(--text-2); }
+        .dots { display: flex; gap: 6px; }
+        .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .dot:hover, .dot.active { background: var(--accent); transform: scale(1.4); }
+        .print-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-2);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .print-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Slides */
+        main { padding-top: 48px; }
+
+        .slide {
+            min-height: calc(100vh - 48px);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-content {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+        .sub { color: var(--text-2); font-size: 1rem; margin-bottom: 32px; }
+
+        /* Hero */
+        .hero { text-align: center; }
+        .hero h1 {
+            background: linear-gradient(135deg, #fff 0%, var(--accent-2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .tag {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-2);
+        }
+
+        /* Grid cards */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .card-num {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .card-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .card-desc {
+            font-size: 11px;
+            color: var(--text-2);
+            line-height: 1.4;
+        }
+
+        /* Detail cards */
+        .detail-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .detail-card .icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+        .detail-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .detail-card ul {
+            list-style: none;
+        }
+        .detail-card li {
+            font-size: 12px;
+            color: var(--text-2);
+            padding: 5px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .detail-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* CTA */
+        .cta { text-align: center; }
+        .cta-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .cta-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 40px;
+            text-align: center;
+        }
+        .cta-num {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-label {
+            font-size: 12px;
+            color: var(--text-2);
+            margin-top: 4px;
+        }
+
+        /* Slide number */
+        .slide-num {
+            position: fixed;
+            bottom: 20px;
+            right: 24px;
+            font-size: 11px;
+            color: var(--text-2);
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.4rem; }
+        }
+        @media (max-width: 600px) {
+            .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+            .cta-grid { flex-direction: column; align-items: center; }
+            .slide { padding: 24px; }
+        }
+
+        @media print {
+            nav, .slide-num { display: none; }
+            .slide { min-height: auto; page-break-after: always; padding: 20px; }
+            body { background: white; color: black; }
+            .card, .detail-card, .cta-item { border: 1px solid #ddd; background: #f9f9f9; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">КП · Моя Наука</span>
+        <div class="dots">
+            <div class="dot active" data-s="1"></div>
+            <div class="dot" data-s="2"></div>
+            <div class="dot" data-s="3"></div>
+            <div class="dot" data-s="4"></div>
+            <div class="dot" data-s="5"></div>
+            <div class="dot" data-s="6"></div>
+            <div class="dot" data-s="7"></div>
+        </div>
+        <button class="print-btn" onclick="print()">PDF</button>
+    </nav>
+
+    <main>
+        <!-- 1. Hero -->
+        <section class="slide hero" id="s1">
+            <div class="slide-content">
+                <h1>Разработка платформы<br>«Моя Наука»</h1>
+                <p class="sub">Полный цикл: проектирование → разработка → запуск</p>
+                <div class="tags">
+                    <span class="tag">UX/UI</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Личный кабинет</span>
+                    <span class="tag">API лаборатории</span>
+                    <span class="tag">20 городов</span>
+                    <span class="tag">ФЗ-152</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Этапы -->
+        <section class="slide" id="s2">
+            <div class="slide-content">
+                <h2>11 этапов работ</h2>
+                <div class="grid-4">
+                    <div class="card">
+                        <div class="card-num">01</div>
+                        <div class="card-title">Проектирование</div>
+                        <div class="card-desc">UX-прототип, БД, структура</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">02</div>
+                        <div class="card-title">Дизайн</div>
+                        <div class="card-desc">Уникальный дизайн разделов</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">03</div>
+                        <div class="card-title">Разработка</div>
+                        <div class="card-desc">Верстка, кастомная логика</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">04</div>
+                        <div class="card-title">Личный кабинет</div>
+                        <div class="card-desc">Профиль, история, избранное</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">05</div>
+                        <div class="card-title">Интеграция БД</div>
+                        <div class="card-desc">API лаборатории, результаты</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">06</div>
+                        <div class="card-title">Корзина + PDF</div>
+                        <div class="card-desc">Оформление, печать бланков</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">07</div>
+                        <div class="card-title">Геопозиция</div>
+                        <div class="card-desc">20 городов, подмена по IP</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">08</div>
+                        <div class="card-title">Мед. специфика</div>
+                        <div class="card-desc">ФЗ-152, слабовидящие</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">09</div>
+                        <div class="card-title">Парсинг</div>
+                        <div class="card-desc">Импорт контента</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">10</div>
+                        <div class="card-title">SEO</div>
+                        <div class="card-desc">Редиректы, URL</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-num">11</div>
+                        <div class="card-title">QA</div>
+                        <div class="card-desc">Тесты, безопасность</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Проектирование + Дизайн -->
+        <section class="slide" id="s3">
+            <div class="slide-content">
+                <h2>Проектирование и дизайн</h2>
+                <div class="grid-2">
+                    <div class="detail-card">
+                        <div class="icon">📐</div>
+                        <h3>Проектирование</h3>
+                        <ul>
+                            <li>UX-прототипы в Figma</li>
+                            <li>Архитектура БД (Eloquent/SQL)</li>
+                            <li>Структура страниц</li>
+                            <li>Карта сценариев</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">🎨</div>
+                        <h3>Дизайн</h3>
+                        <ul>
+                            <li>Главная страница</li>
+                            <li>Каталог и карточка услуги</li>
+                            <li>Новости / Врачи</li>
+                            <li>Личный кабинет</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Разработка + ЛК -->
+        <section class="slide" id="s4">
+            <div class="slide-content">
+                <h2>Разработка и личный кабинет</h2>
+                <div class="grid-2">
+                    <div class="detail-card">
+                        <div class="icon">💻</div>
+                        <h3>Разработка</h3>
+                        <ul>
+                            <li>Адаптивная верстка</li>
+                            <li>Laravel без конструкторов</li>
+                            <li>Кастомная логика</li>
+                            <li>Оптимизация</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">👤</div>
+                        <h3>Личный кабинет</h3>
+                        <ul>
+                            <li>Регистрация / авторизация</li>
+                            <li>Профиль пациента</li>
+                            <li>Избранные врачи</li>
+                            <li>История заказов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Интеграции -->
+        <section class="slide" id="s5">
+            <div class="slide-content">
+                <h2>Интеграции и функционал</h2>
+                <div class="grid-2">
+                    <div class="detail-card">
+                        <div class="icon">🔬</div>
+                        <h3>БД лаборатории</h3>
+                        <ul>
+                            <li>Результаты по коду</li>
+                            <li>API/SQL связь</li>
+                            <li>Автообновление</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">📍</div>
+                        <h3>Геопозиция</h3>
+                        <ul>
+                            <li>Определение по IP</li>
+                            <li>20 городов</li>
+                            <li>Подмена цен/контактов</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">🛒</div>
+                        <h3>Корзина + PDF</h3>
+                        <ul>
+                            <li>Оформление услуг</li>
+                            <li>Генерация бланков</li>
+                            <li>Печать</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">📥</div>
+                        <h3>Парсинг + SEO</h3>
+                        <ul>
+                            <li>Шаблоны парсера</li>
+                            <li>301-редиректы</li>
+                            <li>Сохранение URL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Соответствие + QA -->
+        <section class="slide" id="s6">
+            <div class="slide-content">
+                <h2>Соответствие и QA</h2>
+                <div class="grid-2">
+                    <div class="detail-card">
+                        <div class="icon">⚖️</div>
+                        <h3>Мед. специфика</h3>
+                        <ul>
+                            <li>ФЗ-152 (перс. данные)</li>
+                            <li>Требования Минздрава</li>
+                            <li>Версия для слабовидящих</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <div class="icon">🔍</div>
+                        <h3>Тестирование</h3>
+                        <ul>
+                            <li>Проверка переноса</li>
+                            <li>Функциональные тесты</li>
+                            <li>Аудит безопасности</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CTA -->
+        <section class="slide cta" id="s7">
+            <div class="slide-content">
+                <h2>Следующий шаг</h2>
+                <p class="sub">Готовы обсудить детали и сроки</p>
+                <div class="cta-grid">
+                    <div class="cta-item">
+                        <div class="cta-num">11</div>
+                        <div class="cta-label">этапов</div>
+                    </div>
+                    <div class="cta-item">
+                        <div class="cta-num">20</div>
+                        <div class="cta-label">городов</div>
+                    </div>
+                    <div class="cta-item">
+                        <div class="cta-num">1</div>
+                        <div class="cta-label">платформа</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="slide-num" id="snum">1 / 7</div>
+
+    <script>
+        const dots = document.querySelectorAll('.dot');
+        const slides = document.querySelectorAll('.slide');
+        const snum = document.getElementById('snum');
+
+        const obs = new IntersectionObserver(es => {
+            es.forEach(e => {
+                if (e.isIntersecting) {
+                    const n = e.target.id.replace('s', '');
+                    dots.forEach(d => d.classList.toggle('active', d.dataset.s === n));
+                    snum.textContent = `${n} / 7`;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(s => obs.observe(s));
+        dots.forEach(d => d.onclick = () => document.getElementById(`s${d.dataset.s}`).scrollIntoView({ behavior: 'smooth' }));
+
+        document.onkeydown = e => {
+            const curr = +document.querySelector('.dot.active')?.dataset.s || 1;
+            if (['ArrowDown','ArrowRight',' '].includes(e.key)) {
+                e.preventDefault();
+                document.getElementById(`s${Math.min(curr+1, 7)}`)?.scrollIntoView({ behavior: 'smooth' });
+            }
+            if (['ArrowUp','ArrowLeft'].includes(e.key)) {
+                e.preventDefault();
+                document.getElementById(`s${Math.max(curr-1, 1)}`)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    </script>
+</body>
+</html>

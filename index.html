@@ -117,7 +117,7 @@
                 <h3 class="text-xl font-semibold text-gray-800 text-center mb-8">Кейсы за которые не стыдно</h3>
 
                 <!-- Portfolio by category -->
-                <div class="grid lg:grid-cols-3 gap-6 mb-12">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     <!-- SEO Case 1: Artriamed -->
                     <a href="https://artriamed.ru/" target="_blank" rel="noopener" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
                         <div class="relative">
@@ -155,35 +155,65 @@
                     </a>
 
                     <!-- Dev Case: Algimed -->
-                    <a href="https://algimed.com/" target="_blank" rel="noopener" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
                         <div class="relative">
                             <img src="img/Algimed.png" alt="Дизайн algimed.com" class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300">
                             <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="text-xs font-medium text-white bg-purple-500 px-2 py-1 rounded-md">Дизайн</span>
                                 <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">DEV</span>
                                 <span class="text-xs font-medium text-white bg-gray-800 px-2 py-1 rounded-md">ЕС</span>
                             </div>
                         </div>
                         <div class="p-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-semibold text-gray-900">algimed.com</span>
+                                <div class="flex gap-2">
+                                    <a href="https://www.behance.net/gallery/205470535/Medical-laboratory-website" target="_blank" rel="noopener" class="text-gray-400 hover:text-purple-500 transition-colors" title="Дизайн на Behance">
+                                        <i data-lucide="figma" class="w-4 h-4"></i>
+                                    </a>
+                                    <a href="https://algimed.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-medical-500 transition-colors" title="Открыть сайт">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500">Медтехника · Дизайн + разработка</p>
+                        </div>
+                    </div>
+
+                    <!-- Dev Case: BabyBoss -->
+                    <a href="https://babyboss.by/" target="_blank" rel="noopener" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
+                        <div class="relative">
+                            <img src="img/babyboss.png" alt="Дизайн babyboss.by" class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">DEV</span>
+                                <span class="text-xs font-medium text-white bg-gray-800 px-2 py-1 rounded-md">РБ</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
                             <div class="flex items-center justify-between">
-                                <span class="font-semibold text-gray-900 group-hover:text-medical-600 transition-colors">algimed.com</span>
+                                <span class="font-semibold text-gray-900 group-hover:text-medical-600 transition-colors">babyboss.by</span>
                                 <i data-lucide="external-link" class="w-4 h-4 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
                             </div>
-                            <p class="text-sm text-gray-500 mt-1">Медтехника · Полная разработка</p>
+                            <p class="text-sm text-gray-500 mt-1">Детский магазин · Разработка</p>
                         </div>
                     </a>
-                </div>
 
-                <!-- Additional dev projects -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <a href="https://babyboss.by/" target="_blank" rel="noopener" class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm hover:border-medical-300 hover:shadow-md transition-all group">
-                        <i data-lucide="globe" class="w-4 h-4 text-gray-400 group-hover:text-medical-500"></i>
-                        <span class="font-medium text-gray-700 group-hover:text-medical-600">babyboss.by</span>
-                        <span class="text-xs font-medium text-white bg-medical-500 px-2 py-0.5 rounded">РБ</span>
-                    </a>
-                    <a href="https://pharma.by/" target="_blank" rel="noopener" class="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 shadow-sm hover:border-medical-300 hover:shadow-md transition-all group">
-                        <i data-lucide="globe" class="w-4 h-4 text-gray-400 group-hover:text-medical-500"></i>
-                        <span class="font-medium text-gray-700 group-hover:text-medical-600">pharma.by</span>
-                        <span class="text-xs font-medium text-white bg-medical-500 px-2 py-0.5 rounded">РБ</span>
+                    <!-- Dev Case: Pharma -->
+                    <a href="https://pharma.by/" target="_blank" rel="noopener" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
+                        <div class="relative">
+                            <img src="img/pharma.png" alt="Дизайн pharma.by" class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="text-xs font-medium text-white bg-medical-500 px-2 py-1 rounded-md">DEV</span>
+                                <span class="text-xs font-medium text-white bg-gray-800 px-2 py-1 rounded-md">РБ</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-900 group-hover:text-medical-600 transition-colors">pharma.by</span>
+                                <i data-lucide="external-link" class="w-4 h-4 text-gray-400 group-hover:text-medical-500 transition-colors"></i>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">Фармацевтика · Разработка</p>
+                        </div>
                     </a>
                 </div>
 
